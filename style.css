@@ -163,8 +163,11 @@ h1 { font-size: clamp(48px, 6.4vw, 84px); line-height: .98; letter-spacing: -.05
   border-radius: 28px; overflow: hidden; background: var(--night);
   border: 1px solid var(--line); box-shadow: var(--shadow);
 }
-.portrait { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
-.panel-top { position: absolute; top: 16px; left: 16px; right: 16px; z-index: 2; display: flex; justify-content: space-between; gap: 8px; font: 600 10px/1 var(--mono); letter-spacing: .12em; color: var(--night-ink); }
+.portrait { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transform: scale(1.12); transform-origin: 8% 0; }
+.portrait-panel::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 22%; z-index: 1; pointer-events: none; background: linear-gradient(rgba(5, 10, 20, .5), transparent); }
+.panel-top { position: absolute; top: 16px; left: 16px; right: 16px; z-index: 2; display: flex; justify-content: flex-end; gap: 8px; font: 600 10px/1 var(--mono); letter-spacing: .12em; color: var(--night-ink); }
+.panel-top span:first-child { display: none; }
+.portrait-caption::before { content: 'MELKIOR_TECH / PORTFOLIO'; display: block; margin-bottom: 10px; font: 600 10px/1 var(--mono); letter-spacing: .14em; color: var(--cyan); }
 .panel-top span { background: rgba(7, 12, 23, .6); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); padding: 8px 11px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .12); }
 .panel-top .live { color: #6ee7b7; }
 .portrait-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 90px 24px 22px; background: linear-gradient(transparent, rgba(5, 10, 20, .93)); color: var(--night-ink); }
@@ -425,7 +428,8 @@ dialog .note { background: var(--accent-soft); border: 1px solid var(--line); pa
   .stats { gap: 24px; flex-wrap: wrap; }
   .stats dd { font-size: 24px; }
   .portrait-panel { justify-self: stretch; max-width: none; aspect-ratio: 1 / 1.05; }
-  .portrait { object-position: center 25%; }
+  .portrait { object-position: center top; transform: scale(1.04); transform-origin: 0 0; }
+  .panel-top { justify-content: flex-start; }
   .stackbar { gap: 8px; }
   .stackbar .label { width: 100%; margin: 0 0 4px; }
   .section { padding: 64px 0; }
