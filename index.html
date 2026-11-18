@@ -1,162 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio - TADJUIDJE KENMEUGNE MELKIOR</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Melkior — Applications Android, web & cybersécurité</title>
+  <meta name="description" content="Portfolio de Tadjuidje Kenmeugne Melkior, étudiant en génie informatique : applications Android (Mercure Share, Mercure VPN), développement web, backend PHP et cybersécurité.">
+  <meta name="theme-color" content="#080d19">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Melkior — Applications Android, web & cybersécurité">
+  <meta property="og:description" content="Mercure Share, Mercure VPN et projets web : le portfolio de Melkior_Tech.">
+  <meta property="og:url" content="https://portfolio-melkior.vercel.app/">
+  <meta property="og:site_name" content="Melkior_Tech">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://portfolio-melkior.vercel.app/Moi.jpg">
+  <meta property="og:image:width" content="716">
+  <meta property="og:image:height" content="781">
+  <meta property="og:image:alt" content="Portrait de Tadjuidje Kenmeugne Melkior">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://portfolio-melkior.vercel.app/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Tadjuidje Kenmeugne Melkior","alternateName":"Melkior_Tech","url":"https://portfolio-melkior.vercel.app/","image":"https://portfolio-melkior.vercel.app/Moi.jpg","jobTitle":"Étudiant en génie informatique","knowsAbout":["Android","Kotlin","PHP","MySQL","JavaScript","Cybersécurité"],"sameAs":["https://github.com/melkiortadjuidje-design"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('melkior-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
-
 <body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
 
-<header>
-    <div class="logo">Melkior Portfolio</div>
-
-    <nav>
-        <a href="#home">Accueil</a>
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projects">Projets</a>
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="wrap navin">
+      <a href="#accueil" class="brand" aria-label="Melkior, retour en haut">melkior<span>.</span></a>
+      <div class="navlinks" id="navlinks">
+        <a href="#projets">Projets</a>
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="hero" id="home">
-
-    <div class="hero-text">
-        <h1>TADJUIDJE KENMEUGNE MELKIOR</h1>
-
-        <h2>Étudiant en Génie Informatique</h2>
-
-        <p>
-            Passionné par le développement web,
-            les réseaux informatiques,
-            les bases de données,
-            l’UX/UI Design et les technologies numériques.
-        </p>
-
-        <a href="#contact" class="btn">Me contacter</a>
+      </div>
+      <div class="navright">
+        <button class="iconbtn" id="theme" type="button" aria-label="Changer de thème">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z"/></svg>
+        </button>
+        <a class="navcontact" href="#contact">Parlons de ton projet <span aria-hidden="true">↗</span></a>
+        <button class="iconbtn menu" id="menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+      </div>
     </div>
+  </nav>
 
-    <div class="hero-image">
-        <img src="Moi.jpg" alt="Photo de profil">
-    </div>
+  <main id="contenu">
+    <header class="hero" id="accueil">
+      <div class="wrap herogrid">
+        <svg class="hero-orbits" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+          <circle class="ring" cx="300" cy="300" r="130"/>
+          <circle class="ring" cx="300" cy="300" r="210"/>
+          <circle class="ring" cx="300" cy="300" r="290"/>
+          <path class="link" d="M300 90 520 250 420 470M300 90 110 220"/>
+          <circle class="node c" cx="300" cy="90" r="9"/>
+          <circle class="node v" cx="520" cy="250" r="6"/>
+          <circle class="node v" cx="420" cy="470" r="6"/>
+          <circle class="node c" cx="110" cy="220" r="5"/>
+        </svg>
 
-</section>
-
-<section class="about" id="about">
-
-    <h2 class="title">À propos de moi</h2>
-    <p>
-        Je suis étudiant en Génie Informatique avec un intérêt
-        particulier pour le développement web,
-        la conception d’interfaces modernes (UI/UX),
-        les bases de données et les réseaux informatiques.
-        Mon objectif est de développer des solutions numériques
-        innovantes et performantes.
-    </p>
-
-</section>
-
-<section id="skills">
-
-    <h2 class="title">Mes Compétences</h2>
-
-    <div class="skills-container">
-
-        <div class="skill">
-            <h3>HTML</h3>
-            <p>Création de structures web modernes.</p>80%
+        <div class="herotext">
+          <div class="pills">
+            <span class="badge"><span class="dot"></span>Étudiant en génie informatique · Niveau 2</span>
+            <a class="badge new" href="#mercure-share"><b>Nouveau</b> Mercure Share sur Android <span aria-hidden="true">→</span></a>
+          </div>
+          <h1>Du code.<br>Des idées.<br><span class="grad">Du concret.</span></h1>
+          <p class="intro">Moi, c’est <strong>Melkior</strong>. Je développe des applications web et Android, et j’explore la cybersécurité pour construire des solutions utiles, avec des bases solides.</p>
+          <div class="actions">
+            <a href="#projets" class="btn">Découvrir mes projets <span aria-hidden="true">↗</span></a>
+            <a href="#contact" class="btn secondary">Me contacter</a>
+          </div>
+          <dl class="stats">
+            <div><dt>Projets présentés</dt><dd>7</dd></div>
+            <div><dt>Applications Android</dt><dd>2</dd></div>
+            <div><dt>Signature</dt><dd>Melkior_Tech</dd></div>
+          </dl>
         </div>
 
-        <div class="skill">
-            <h3>CSS</h3>
-            <p>Design responsive et professionnel.</p>70%
+        <div class="portrait-panel">
+          <div class="panel-top"><span>MELKIOR_TECH / PORTFOLIO</span><span class="live">● EN LIGNE</span></div>
+          <img class="portrait" src="Moi.jpg" width="716" height="781" alt="Portrait de Tadjuidje Kenmeugne Melkior" fetchpriority="high">
+          <div class="portrait-caption">
+            <strong>Tadjuidje Kenmeugne Melkior</strong>
+            <span>Développement web & Android · Génie informatique</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="stackbar">
+          <span class="label">MON ENVIRONNEMENT</span>
+          <span>Kotlin</span><span>Android</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Python</span><span>HTML & CSS</span><span>Linux</span><span>Figma</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="projets">
+      <div class="wrap">
+        <div class="sectionhead reveal">
+          <div>
+            <div class="eyebrow">01 / Une idée devient un projet</div>
+            <h2>Quelques projets,<br>beaucoup d’apprentissage.</h2>
+          </div>
+          <p>Des applications Android, des interfaces web, de la logique Python et une maquette hospitalière : chaque projet m’apprend quelque chose de nouveau.</p>
         </div>
 
-        <div class="skill">
-            <h3>PHP</h3>
-            <p>Développement de fonctionnalités côté serveur.</p>60%
+        <div class="filters" role="group" aria-label="Filtrer les projets">
+          <button class="filter active" type="button" data-filter="all" aria-pressed="true">Tous les projets</button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Applications Android</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false">Développement web</button>
+          <button class="filter" type="button" data-filter="code" aria-pressed="false">Python & automatisation</button>
+          <button class="filter" type="button" data-filter="design" aria-pressed="false">Maquettes & UI/UX</button>
         </div>
 
-        <div class="skill">
-            <h3>JavaScript</h3>
-            <p>Interactions et dynamisme des pages.</p>30%
+        <div class="projects reveal">
+          <!-- 01 · Mercure Share -->
+          <article class="project featured" data-category="mobile" id="mercure-share">
+            <div class="preview dark share">
+              <div class="rings" aria-hidden="true"></div>
+              <div class="phone" aria-hidden="true">
+                <div class="phone-app">MERCURE SHARE</div>
+                <div class="phone-status"><i></i>VPN actif</div>
+                <div class="power">
+                  <svg viewBox="0 0 24 24"><path d="M12 3v8"/><path d="M6.6 6.6a7.5 7.5 0 1 0 10.8 0"/></svg>
+                  <b>ACTIF</b>
+                </div>
+                <div class="phone-sub">Partage actif · 3 appareils</div>
+                <div class="phone-card">
+                  <small>Nom du Wi-Fi</small><code>DIRECT-MS-Mercure</code>
+                  <small>Proxy</small><code class="hl">192.168.49.1:8080</code>
+                </div>
+              </div>
+              <ul class="devices" aria-hidden="true">
+                <li>PC &amp; Mac</li><li>iPhone</li><li>Smart TV</li><li>PlayStation</li>
+              </ul>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">01 / APPLICATION ANDROID <em>Nouveau</em></span>
+              <h3>Mercure Share</h3>
+              <p>Partager la connexion VPN d’un téléphone Android avec un PC, un iPhone, une TV ou une console, sans rien installer sur ces appareils.</p>
+              <ul class="features">
+                <li>Réseau Wi-Fi Direct et proxy HTTP, ou URL de proxy automatique</li>
+                <li>Connexion d’un appareil en une minute avec un QR code</li>
+                <li>Tout le trafic passe par le VPN, DNS compris</li>
+              </ul>
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Wi-Fi Direct</span><span class="tag">Proxy HTTP</span><span class="tag">Coroutines</span></div>
+              <div class="projectlinks">
+                <a href="https://wa.me/237652804382?text=Bonjour%20Melkior%2C%20je%20souhaite%20obtenir%20l%E2%80%99application%20Mercure%20Share." target="_blank" rel="noopener noreferrer">Obtenir l’application ↗</a>
+                <span>Android 8 et plus</span>
+              </div>
+              <button class="details" type="button" data-project="share">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- 02 · Mercure VPN -->
+          <article class="project featured" data-category="mobile" id="mercure-vpn">
+            <div class="preview dark vpn">
+              <div class="rings" aria-hidden="true"></div>
+              <div class="phone" aria-hidden="true">
+                <div class="phone-app">MERCURE VPN</div>
+                <div class="phone-status"><i></i>Connecté</div>
+                <div class="power">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.6 7.5 10 4.3-1.4 7.5-5.4 7.5-10v-6Z"/><path d="m9 12 2 2 4-4"/></svg>
+                  <b>PROTÉGÉ</b>
+                </div>
+                <div class="phone-sub">Tunnel chiffré · WireGuard</div>
+                <div class="phone-card">
+                  <small>Protocole</small><code>WireGuard</code>
+                  <small>Chiffrement</small><code class="hl">ChaCha20-Poly1305</code>
+                </div>
+              </div>
+              <ul class="devices" aria-hidden="true">
+                <li>Kotlin</li><li>WireGuard</li><li>Tunnel chiffré</li><li>+ Mercure Share</li>
+              </ul>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">02 / APPLICATION ANDROID · SÉCURITÉ</span>
+              <h3>Mercure VPN</h3>
+              <p>Une application VPN Android développée en Kotlin, qui chiffre le trafic du téléphone grâce au protocole WireGuard.</p>
+              <ul class="features">
+                <li>Tunnel WireGuard intégré au service VPN natif d’Android</li>
+                <li>Compatible avec les architectures ARM et x86, 32 et 64 bits</li>
+                <li>Complémentaire de Mercure Share pour protéger tous vos appareils</li>
+              </ul>
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">WireGuard</span><span class="tag">VpnService</span><span class="tag">Cybersécurité</span></div>
+              <div class="projectlinks">
+                <a href="https://wa.me/237652804382?text=Bonjour%20Melkior%2C%20je%20souhaite%20obtenir%20l%E2%80%99application%20Mercure%20VPN." target="_blank" rel="noopener noreferrer">Obtenir l’application ↗</a>
+                <span>APK Android</span>
+              </div>
+              <button class="details" type="button" data-project="vpn">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- 03 · Formulaire restaurant -->
+          <article class="project" data-category="web">
+            <div class="preview food">
+              <div class="mock">
+                <div class="mockhead"><span>Melkior_grill</span><span>Inscription</span></div>
+                <div class="burger" aria-hidden="true">🍔</div>
+                <div class="foodsmall"><span>Du goût. Du caractère.</span><span>Mon compte →</span></div>
+              </div>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">03 / DÉVELOPPEMENT WEB</span>
+              <h3>Formulaire restaurant</h3>
+              <p>Un formulaire HTML, CSS et PHP relié à une base de données sur un serveur.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">PHP</span><span class="tag">Base de données</span></div>
+              <div class="projectlinks">
+                <a href="https://devoir-cloud-computing-three.vercel.app/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                <a href="https://github.com/melkiortadjuidje-design/devoirCloudComputing" target="_blank" rel="noopener noreferrer">Code GitHub ↗</a>
+              </div>
+              <button class="details" type="button" data-project="food">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- 04 · Jeu Python -->
+          <article class="project" data-category="code">
+            <div class="preview python">
+              <div class="terminal">
+                <div class="terminaldots">● ● ● <span>jeu.py</span></div>
+                <div><span class="terminalgreen">$ python jeu.py</span><br>Bienvenue dans le jeu !<br>Choisis une couleur : <span class="terminalgreen">bleu</span><br>Choisis un numéro : <span class="terminalgreen">7</span><br><span class="cursor">▌</span></div>
+              </div>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">04 / APPLICATION CONSOLE</span>
+              <h3>Jeu de hasard Python</h3>
+              <p>Un jeu de type loto en console : choix d’un numéro, d’une couleur et simulation d’une mise.</p>
+              <div class="tags"><span class="tag">Python</span><span class="tag">Console</span><span class="tag">Logique de jeu</span></div>
+              <div class="projectlinks">
+                <a href="https://github.com/melkiortadjuidje-design/Jeu-de-hasard-" target="_blank" rel="noopener noreferrer">Code GitHub ↗</a>
+              </div>
+              <button class="details" type="button" data-project="python">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- 05 · Bot WhatsApp -->
+          <article class="project" data-category="code">
+            <div class="preview bot">
+              <div class="chatmock">
+                <div class="chathead">● &nbsp; Bot WhatsApp <small>Projet en développement</small></div>
+                <div class="bubble">Bonjour ! 👋</div>
+                <div class="bubble reply">Une idée à automatiser ?</div>
+                <div class="chatinput">JavaScript + Baileys <span>➤</span></div>
+              </div>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">05 / EN COURS DE DÉVELOPPEMENT</span>
+              <h3>Bot WhatsApp</h3>
+              <p>Un bot JavaScript utilisant Baileys pour automatiser et gérer des tâches sur WhatsApp.</p>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Baileys</span><span class="tag">Automatisation</span></div>
+              <div class="projectlinks"><span>Développement en cours</span></div>
+              <button class="details" type="button" data-project="bot">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- 06 · Calculatrice -->
+          <article class="project" data-category="web">
+            <div class="preview calc">
+              <div class="calcmock">
+                <div class="calcdisplay">12 + 8 <strong>20</strong></div>
+                <div class="calckeys"><span>7</span><span>8</span><span>9</span><span>÷</span><span>4</span><span>5</span><span>6</span><span>×</span><span>1</span><span>2</span><span>3</span><span>−</span><span>C</span><span>0</span><span>=</span><span>+</span></div>
+              </div>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">06 / APPLICATION WEB</span>
+              <h3>Calculatrice web</h3>
+              <p>Une calculatrice pour effectuer les opérations essentielles dans une interface simple.</p>
+              <div class="tags"><span class="tag">Web</span><span class="tag">Calcul</span><span class="tag">Interface</span></div>
+              <div class="projectlinks">
+                <a href="https://calculatrice-md.vercel.app/" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
+                <a href="https://github.com/melkiortadjuidje-design/Calculatrice" target="_blank" rel="noopener noreferrer">Code GitHub ↗</a>
+              </div>
+              <button class="details" type="button" data-project="calc">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- 07 · MediFlow -->
+          <article class="project" data-category="design">
+            <div class="preview medical">
+              <div class="mock">
+                <div class="mockhead"><span>✚ MediFlow</span><span>Ressources hospitalières</span></div>
+                <div class="mockbody">
+                  <div class="sidebar"><i></i><i></i><i></i><i></i></div>
+                  <div>
+                    <div class="mockstats"><div><b>▣</b>Stocks</div><div><b>✚</b>Équipements</div><div><b>▤</b>Lits</div></div>
+                    <div class="chart"><i style="--h:40%"></i><i style="--h:70%"></i><i style="--h:50%"></i><i style="--h:85%"></i><i style="--h:65%"></i><i style="--h:100%"></i></div>
+                  </div>
+                </div>
+              </div>
+              <span class="illustration-label">INTERFACE ILLUSTRATIVE</span>
+            </div>
+            <div class="projectbody">
+              <span class="projectnum">07 / MAQUETTE INTERACTIVE</span>
+              <h3>MediFlow — Ressources médicales</h3>
+              <p>Une maquette de gestion hospitalière : stocks, équipements, lits et demandes internes.</p>
+              <div class="tags"><span class="tag">UI/UX</span><span class="tag">Gestion hospitalière</span><span class="tag">Prototype</span></div>
+              <div class="projectlinks">
+                <a href="https://mediflow-melkior.melkiortadjuidje.chatgpt.site" target="_blank" rel="noopener noreferrer">Voir la maquette ↗</a>
+              </div>
+              <p class="access-note">Maquette à accès restreint. Données de démonstration fictives.</p>
+              <button class="details" type="button" data-project="medical">Explorer le projet <span aria-hidden="true">↗</span></button>
+            </div>
+          </article>
+
+          <!-- Appel à l’action -->
+          <article class="project cta" data-category="all">
+            <div class="ctain">
+              <span class="projectnum">08 / ET ENSUITE ?</span>
+              <h3>Ton projet pourrait être le prochain.</h3>
+              <p>Une application web ou mobile à imaginer ? Parlons-en et construisons-la étape par étape.</p>
+              <a class="btn" href="#contact">Parlons de ton projet <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="apropos">
+      <div class="wrap about">
+        <div class="reveal">
+          <div class="eyebrow">02 / Derrière le code</div>
+          <h2>Curieux par nature.<br>Développeur en devenir.</h2>
+          <p>Je suis <strong>Tadjuidje Kenmeugne Melkior</strong>, étudiant en deuxième année de génie informatique. J’aime comprendre comment une application fonctionne, de son interface à sa base de données, jusqu’au réseau qui la transporte.</p>
+          <p>Je concentre ma progression sur le backend PHP, le développement Android et la cybersécurité. Mes applications <strong>Mercure VPN</strong> et <strong>Mercure Share</strong> réunissent ces axes : développement mobile et sécurité réseau. Mon approche : apprendre en construisant, puis améliorer à chaque étape.</p>
+          <div class="identity">
+            <div><span>Formation</span><strong>Génie informatique · Niveau 2</strong></div>
+            <div><span>Priorités</span><strong>Backend PHP, Android & cybersécurité</strong></div>
+            <div><span>Signature</span><strong>Melkior_Tech</strong></div>
+          </div>
         </div>
 
-        <div class="skill">
-            <h3>Base de données</h3>
-            <p>Conception et gestion des données.</p>60%
+        <div class="skills reveal" id="competences">
+          <div class="skillrow new">
+            <div class="skillicon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+            <div>
+              <h3>Applications Android <span class="newtag">Nouveau</span></h3>
+              <p>Concevoir des applications Kotlin qui exploitent le réseau du téléphone : VPN, Wi-Fi Direct et proxy.</p>
+              <div class="tags"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Coroutines</span><span class="tag">WireGuard</span><span class="tag">Wi-Fi Direct</span></div>
+            </div>
+          </div>
+          <div class="skillrow">
+            <div class="skillicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></div>
+            <div>
+              <h3>Développement web</h3>
+              <p>Construire l’interface et relier les formulaires à la logique serveur.</p>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">PHP</span></div>
+            </div>
+          </div>
+          <div class="skillrow">
+            <div class="skillicon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7" ry="3"/><path d="M5 5.5v13c0 1.7 3.1 3 7 3s7-1.3 7-3v-13M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></div>
+            <div>
+              <h3>Données & conception</h3>
+              <p>Modéliser un besoin, structurer les données et penser le parcours utilisateur.</p>
+              <div class="tags"><span class="tag">MySQL</span><span class="tag">Merise</span><span class="tag">Figma</span><span class="tag">UI/UX</span></div>
+            </div>
+          </div>
+          <div class="skillrow">
+            <div class="skillicon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.6 7.5 10 4.3-1.4 7.5-5.4 7.5-10v-6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <div>
+              <h3>Systèmes & sécurité</h3>
+              <p>Comprendre les réseaux, chiffrer les échanges et renforcer les bases de sécurité.</p>
+              <div class="tags"><span class="tag">Linux</span><span class="tag">Réseaux</span><span class="tag">VPN</span><span class="tag">Maintenance</span><span class="tag">Cybersécurité</span></div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="skill">
-            <h3>Réseau</h3>
-            <p>Administration et architecture réseau.</p>50%
+      <div class="wrap">
+        <div class="approach reveal">
+          <div><strong>01. Comprendre</strong><span>Le besoin avant le code.</span></div>
+          <div><strong>02. Concevoir</strong><span>Une structure simple et utile.</span></div>
+          <div><strong>03. Développer</strong><span>Avancer par étapes concrètes.</span></div>
+          <div><strong>04. Améliorer</strong><span>Tester, apprendre, recommencer.</span></div>
         </div>
+      </div>
+    </section>
 
-        <div class="skill">
-            <h3>UI/UX Design</h3>
-            <p>Création d’interfaces intuitives.</p>70%
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div>
+            <div class="eyebrow">03 / La prochaine idée ?</div>
+            <h2>Parlons de<br>ton projet<span>.</span></h2>
+            <p>Un projet web ou mobile, une collaboration étudiante ou simplement une idée à partager ? Écris-moi sur WhatsApp.</p>
+            <a class="btn" href="https://wa.me/237652804382" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp <span aria-hidden="true">↗</span></a>
+            <p class="contact-links">
+              <a href="tel:+237652804382">+237 6 52 80 43 82</a>
+              <a href="mailto:melkiortadjuidje@gmail.com">melkiortadjuidje@gmail.com</a>
+              <a href="https://github.com/melkiortadjuidje-design" target="_blank" rel="noopener noreferrer">Mon profil GitHub ↗</a>
+            </p>
+          </div>
+          <form id="contactform">
+            <label>Ton nom<input name="name" autocomplete="name" required maxlength="100" placeholder="Comment t’appelles-tu ?"></label>
+            <label>Ton idée<textarea name="message" required maxlength="2000" placeholder="Présente ton projet en quelques mots…"></textarea></label>
+            <button class="btn" type="submit">Préparer mon message <span aria-hidden="true">↗</span></button>
+            <small>Le bouton ouvre WhatsApp avec ton message prérempli. Tu choisis ensuite de l’envoyer.</small>
+          </form>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="skill">
-            <h3>Maintenance</h3>
-            <p>Support et maintenance des systèmes informatiques.</p>40%
-        </div>
+  <footer class="wrap footer">
+    <a class="brand" href="#accueil">melkior<span>.</span></a>
+    <span>© 2026 Tadjuidje Kenmeugne Melkior · Melkior_Tech</span>
+    <span>Apprendre. Créer. Progresser. <a href="#accueil" aria-label="Retour en haut">↑</a></span>
+  </footer>
 
-    </div>
+  <dialog id="projectdialog" aria-labelledby="dialogtitle">
+    <button class="close" type="button" aria-label="Fermer le projet">×</button>
+    <div class="eyebrow">Détail du projet</div>
+    <h2 id="dialogtitle"></h2>
+    <p id="dialogdescription"></p>
+    <ul id="dialogpoints"></ul>
+    <p class="note">Les visuels du portfolio sont des illustrations de présentation. Ils ne constituent pas une démonstration de l’application.</p>
+    <a class="btn" href="#contact" id="dialogcontact">En discuter <span aria-hidden="true">↗</span></a>
+  </dialog>
 
-</section>
-
-<section id="projects">
-
-    <h2 class="title">Mes Projets</h2>
-
-    <div class="projects-container">
-
-        <div class="project-card">
-            <h3>Projet 1</h3>
-            <p>Un formulaire basique pour restaurant codé à l'aide du HTML + PHP + CSS relié à une base de données hebergé sur un serveur.</p> 
-            <a href="https://devoir-cloud-computing-three.vercel.app/">Voir le projet</a><br>
-            <a href="https://github.com/melkiortadjuidje-design/devoirCloudComputing">Voir le dépôt github</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Projet 2</h3>
-            <p>Petit jeu casino style loto codé en python qui se lance uniquement en console. On mise de l'argent puis on choisit une des couleurs et un numéro au hasard.</p>
-            <a href="https://github.com/melkiortadjuidje-design/Jeu-de-hasard-">Voir le dépôt github</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Projet 3</h3>
-            <p>Bot whatsapp codé en javascript en utilisant la librairie baileys pour l'automatisation et la gestion des tâches.</p> Encore en cours de développement...
-        </div>
-
-        <div class="project-card">
-            <h3>Projet 4</h3>
-            <p>Une simple calculatrice permettant d'effectuer des opérations simples comme additioner, soustraire, multiplier et diviser des nombres.</p>
-            <a href="https://calculatrice-md.vercel.app/">Voir le projet</a><br> 
-            <a href="https://github.com/melkiortadjuidje-design/Calculatrice">Voir le dépôt github</a>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="contact" id="contact">
-
-    <h2 class="title">Contact</h2>
-
-    <p>Email : <a href="mailto:melkiortadjuidje@gmail.com">melkiortadjuidje@gmail.com</a></p>
-    <p>Téléphone : <a href="tel:+237652804382">+237 652 804 382</a></p>
-
-</section>
-
-<footer>
-    <p>© 2026 - TADJUIDJE KENMEUGNE MELKIOR | Tous droits réservés</p>
-</footer>
-
+  <script src="script.js" defer></script>
 </body>
 </html>

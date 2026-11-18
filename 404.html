@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Melkior</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#080d19">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      try { t = localStorage.getItem('melkior-theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    .notfound { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 20px; position: relative; overflow: hidden; }
+    .notfound::before { content: ''; position: absolute; width: 640px; height: 640px; left: 50%; top: 50%; transform: translate(-50%, -50%); border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 79px, var(--line) 79px 80px); pointer-events: none; }
+    .notfound > div { position: relative; }
+    .notfound .code { font: 700 clamp(96px, 22vw, 180px)/1 var(--display); letter-spacing: -.06em; margin: 18px 0 8px; background: linear-gradient(100deg, var(--accent) 15%, var(--violet) 95%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .notfound h1 { font-size: clamp(26px, 4vw, 36px); line-height: 1.15; letter-spacing: -.03em; margin: 0 0 12px; }
+    .notfound p { color: var(--muted); margin: 0 auto 28px; max-width: 380px; }
+  </style>
+</head>
+<body>
+  <main class="notfound">
+    <div>
+      <a href="/" class="brand">melkior<span>.</span></a>
+      <div class="code">404</div>
+      <h1>Cette page n’existe pas.</h1>
+      <p>Le lien est peut-être incorrect, ou la page a été déplacée.</p>
+      <a class="btn" href="/">Retour au portfolio <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+</body>
+</html>
